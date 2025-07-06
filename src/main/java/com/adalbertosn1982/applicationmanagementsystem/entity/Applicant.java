@@ -1,6 +1,8 @@
 package com.adalbertosn1982.applicationmanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,6 +10,8 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Applicant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

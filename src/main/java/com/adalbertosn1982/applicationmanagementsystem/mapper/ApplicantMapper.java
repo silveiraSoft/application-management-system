@@ -8,10 +8,25 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ApplicantMapper {
+    //ApplicantDTO toDTO(Applicant applicant);
+    //Applicant toEntity(ApplicantDTO applicantDTO);
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "name", source = "name")
+    @Mapping(target = "resume", source = "resume")
+    @Mapping(target = "skills", source = "skills")
     ApplicantDTO toDTO(Applicant applicant);
+
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "name", source = "name")
+    @Mapping(target = "resume", source = "resume")
+    @Mapping(target = "skills", source = "skills")
     Applicant toEntity(ApplicantDTO applicantDTO);
 
+    @Mapping(target = "id", source = "id")
+    @Mapping( target = "filePath", source = "filePath")
     ResumeDTO toResumeDTO(Resume resume);
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "filePath", source = "filePath")
     Resume toResumeEntity(ResumeDTO resumeDTO);
 
     //SkillDTO toSkillDTO(Skill skill);

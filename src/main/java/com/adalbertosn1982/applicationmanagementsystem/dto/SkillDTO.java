@@ -1,18 +1,14 @@
 package com.adalbertosn1982.applicationmanagementsystem.dto;
 
-//import java.io.Serializable;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
-
 @Getter
 @Setter
-public class SkillDTO implements Serializable {
+public class SkillDTO{
     private Long id;
     @NotBlank(message = "Skill name is required")
     @Size(min = 2, max = 65, message = "Skill name must be between 2 and 65 characters")
