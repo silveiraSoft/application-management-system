@@ -44,9 +44,9 @@ public class SkillController {
                     )
             }
     )*/
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    //@PostMapping
-    public ResponseEntity<SkillDTO> create(@RequestBody @Valid SkillDTO dto) {
+    //@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping
+    public ResponseEntity<SkillDTO> create(@Valid @RequestBody SkillDTO dto) {
         Skill saved = service.save(mapper.toSkillEntity(dto));
         //return mapper.toSkillDTO(saved);
         return ResponseEntity.status(HttpStatus.CREATED)
