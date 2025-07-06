@@ -80,6 +80,17 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(body);
     }
+
+    @ExceptionHandler(RegisterNotFoundException.class)
+    public ResponseEntity<Object> handleRegisterNotFoundException(RegisterNotFoundException ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("message", ex.getMessage());
+        body.put("timestamp", LocalDateTime.now());
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(body);
+    }
 }
 
 /*

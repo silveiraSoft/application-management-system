@@ -59,4 +59,14 @@ public class SkillController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<SkillDTO> update(@PathVariable Long id, @Valid @RequestBody SkillDTO dto) {
+        Skill updated = service.update(id, mapper.toSkillEntity(dto));
+        return ResponseEntity.ok(mapper.toSkillDTO(updated));
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<SkillDTO> getById(@PathVariable Long id) {
+        Skill skill = service.findById(id);
+        return ResponseEntity.ok(mapper.toSkillDTO(skill));
+    }
 }
